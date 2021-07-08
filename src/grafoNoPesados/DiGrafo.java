@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package grafos.no.pesados;
+package grafoNoPesados;
 
 import ed2202101.excepciones.ExcepcionAristaNoExiste;
 import ed2202101.excepciones.ExcepcionAristaYaExiste;
@@ -27,7 +27,13 @@ public class DiGrafo extends Grafo {
     @Override
     //sumar todos los size de todas las listas existentes
     public int cantidadDeAristas() {
-        return super.cantidadDeAristas(); //To change body of generated methods, choose Tools | Templates.
+        int cantidad = 0;
+        for (int i = 0; i < this.listaDeAdyacencias.size(); i++) {
+            List<Integer> adyacentesVertice = this.listaDeAdyacencias.get(i);
+            int cantidadAdyacentes = adyacentesVertice.size();
+            cantidad = cantidad + cantidadAdyacentes;
+        }
+        return cantidad;
     }
 
     @Override
@@ -83,4 +89,19 @@ public class DiGrafo extends Grafo {
     
     //super esta llamando de la clase principal
     //this esta llamando de la clase hijo
+    
+    /** Si un Digrafo es débilmente conexo
+     * 
+     */
+    
+    /** Si un Digrafo es fuertemente conexo
+     * 
+     */
+    
+    /** Hay Ciclo en un DiGrafo
+     * Hacer el recorrido DFS desde el primer vertice disponible
+     * Preguntar si hay aristas atrás
+     * Preguntar si el último vértice visitado tiene como adyacente al primer
+     * vértice
+     */
 }

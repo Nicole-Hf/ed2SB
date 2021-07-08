@@ -39,6 +39,6 @@ public interface IArbolBusqueda<K extends Comparable<K>, V> {
     K mayorLLave();
     boolean hayHojasEnUltimoNivel();
     boolean tieneHojasOTodosHijos();
-    boolean sonIguales(ArbolMViasBusqueda<K,V> arbolCopia);
+    boolean sonIguales(ArbolMViasBusqueda<K,V> arbolCopia);   
 }
 

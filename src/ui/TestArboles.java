@@ -118,17 +118,22 @@ public class TestArboles {
         
         ArbolMViasBusqueda<Integer,String> arbolCopia = new ArbolMViasBusqueda<>(4);
         arbolCopia.insertar(50, "Franco");
+        arbolCopia.insertar(55, "Franco");
         arbolCopia.insertar(60, "Abner");        
         arbolCopia.insertar(70, "Yuliana");
         arbolCopia.insertar(90, "Jorge");
         arbolCopia.insertar(40, "Marco");
         arbolCopia.insertar(45, "jUAN");
         arbolCopia.insertar(20, "Ruth");
-        arbolCopia.insertar(65, "Ricky");           
+        arbolCopia.insertar(65, "Ricky");   
+        arbolCopia.insertar(68, "Ricky"); 
+        arbolCopia.insertar(110, "Ricky");
         System.out.println(arbolCopia);
         System.out.println("20. Para un árbol m vías implementar un método que reciba otro \n"
                 + "árbol de parámetro y que retorne verdadero si los arboles son \n"
                 + "similares. Falso en caso contrario: "
                 + arbolBusqueda.sonIguales(arbolCopia));
+              
+        System.out.println("Cantidad de Nodo No Vacios Desde N nivel: " + arbolCopia.nroNodosNoVaciosDesdeN(0));
     }   
 }

@@ -607,6 +607,35 @@ public class ArbolMViasBusqueda<K extends Comparable<K>, V>
         return resultado;
     } 
 
+    /**Implementar un metodo que retorne el número de nodos no vacios 
+     * que hay en un arbol m vias de busqueda desde el nivel n.
+     * */
+    public int nroNodosNoVaciosDesdeN(int nivel) {
+        return nroNodosNoVaciosDesdeN(this.raiz,nivel,0);
+    } 
+
+    private int nroNodosNoVaciosDesdeN(NodoMVias<K, V> nodoActual, int nivel, int nivelActual) {
+        if (NodoMVias.esNodoVacio(nodoActual)) {
+            return 0;
+        }
+        int contador = 0;
+        if (nivel == 0) {
+            if (nodoActual.esHoja()) {
+                return 1;
+            }
+        }
+        if (nivelActual >= nivel) {
+            for (int i = 0; i < this.orden; i++) {
+                if (!NodoMVias.esNodoVacio(nodoActual.getHijo(i))) {
+                    contador = contador + 1;
+                } else {
+                    contador = contador + nroNodosNoVaciosDesdeN(nodoActual.getHijo(i),nivel,nivelActual + 1);
+                }
+            }
+        }
+        return contador;
+    }
+    
     @Override
     public int cantidadDeNodosConAmbosHijos() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

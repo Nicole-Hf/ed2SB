@@ -72,7 +72,7 @@ public class ArbolB <K extends Comparable<K>, V> extends ArbolMViasBusqueda<K,V>
     }
 
     private void dividir(NodoMVias<K, V> nodoActual, Stack<NodoMVias<K, V>> pilaDeAncestros) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
     @Override
